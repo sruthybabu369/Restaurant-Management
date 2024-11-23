@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% extends "index.html" %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Food Details</h4>
+<!--                    <p class="card-description"> Add class <code>.table-striped</code>-->
+<!--                    </p>-->
+                    <div class="table-responsive">
+                      <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th>FOOD NAME</th>
+                            <th>PRICE</th>
+                            <th>QUANTITY</th>
+                            <th>DESCRIPTION</th>
+
+                            <th>OPTIONS</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                         {% for d in data %}
+                          <tr>
+                            <td>{{d.FName}}</td>
+                            <td>{{d.Price}}</td>
+                            <td>{{d.Quantity}}</td>
+                            <td>{{d.Description}}</td>
+
+
+                            <td>
+                                <a href= "{% url 'edit_food' food_id=d.id %}">
+
+                                 <button type="button" class="btn btn-primary">Edit</button>
+                                </a>
+                            </td>
+                            <td>
+                            <a href = "{% url 'delete_food' food_id=d.id %}">
+                               <button type="button" class="btn btn-primary">Delete</button>
+                             </a>
+                            </td>
+
+                          </tr>
+                         {% endfor %}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+</body>
+</html>
+{% endblock %}

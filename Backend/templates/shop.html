@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{% extends "index.html" %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="col-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Add Shop Details here</h4>
+                    <p class="card-description">Add Shop Details here </p>
+                    <form class="forms-sample" method="post" action="{% url 'save_shop' %}">
+                       {% csrf_token %}
+                      <div class="form-group">
+                        <label for="exampleInputName1">Shop Name</label>
+                        <input type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="sname">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail3">Owner Name</label>
+                        <input type="text" class="form-control" id="exampleInputEmail3" placeholder="owner" name="owner">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword4">Place</label>
+                        <input type="text" class="form-control" id="exampleInputPassword4" placeholder="place" name="place">
+                      </div>
+
+                      <div class="form-group">
+                        <label for="exampleSelectGender">District</label>
+                        <select class="form-control" id="exampleSelectGender" name="district">
+                          <option>kannur</option>
+                          <option>palakkad</option>
+                          <option>thrissur</option>
+                          <option>ernakulam</option>
+                          <option>kasargod</option>
+                          <option>kozhikode</option>
+                          <option>idukki</option>
+
+                        </select>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="exampleInputCity1">Contact number</label>
+                        <input type="text" class="form-control" id="exampleInputCity1" placeholder="contact no" name="mobnumber">
+                      </div>
+
+                      <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                      <button class="btn btn-dark">Cancel</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+</body>
+</html>
+{% endblock %}
